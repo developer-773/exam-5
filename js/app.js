@@ -211,7 +211,7 @@ elForm.addEventListener("submit", evt => {
         }
         
         if (elAnswerText.innerHTML === "") {
-            congratulationsShow()
+            alert("Uraaa siz yutdingiz :)")
         }
         
     })
