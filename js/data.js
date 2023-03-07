@@ -1,4 +1,4 @@
-var array = [
+let array = [
 	{
 		id: 0,
 		name: "Yo'l bering",
