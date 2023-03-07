@@ -162,7 +162,7 @@ function sortingAllSings() {
 
 
 // Countdown timer creating
-let value = 5;
+let value = 180;
 
 function countdownShow() {
 
