@@ -223,7 +223,12 @@ elForm.addEventListener("submit", evt => {
     evt.preventDefault();
     elCar.classList.add("carDrive")
     setTimeout(() => {
-        elAudio.play()
+        const randomingMusic = Math.floor(Math.random() * musics.length)
+            const randomed = musics[randomingMusic]
+            musics.forEach(item => {
+                elAudio.src = randomed
+                elAudio.play()
+            })
         elStartPage.classList.add("d-none");
         elSelectsBox.classList.toggle("d-none");
         elPlayStatusBox.classList.toggle("pt-4")
