@@ -13,13 +13,9 @@ const elForm = document.querySelector(".selectsForm");
 const elDataList = document.querySelector(".data__list");
 const elDataListFragment = document.createDocumentFragment();
 const elAudio = document.querySelector(".audio")
-const answersList = [];
-let score = 0;
-let wrongAnswer = 0;
 const musics = ["../music/lean.mp3", "../music/name.mp3", "../music/riders.mp3"]
 let elVideo = document.querySelector("#vid")
 let elConfetti = document.querySelector("#canvas")
-let timer;
 const elScoreUp = document.querySelector(".scoreUp")
 const elCar = document.querySelector(".carr")
 const elModal = document.querySelector(".modall")
@@ -28,7 +24,11 @@ const elMusicBtn = document.querySelector(".music-btn")
 const elWrongScore = document.querySelector(".wrong")
 const elWrongLabel = document.querySelector(".wrong-answer")
 const elModalTitle = document.querySelector(".modal-tittle")
-
+let wrongAnswer = 0;
+let score = 0;
+const answersList = [];
+let timer;
+const elApplause = document.querySelector(".applause")
 let evt = new Event('click')
 
 
@@ -285,7 +285,6 @@ elDataList.addEventListener("click", evt => {
         elModalTitle.textContent = 'GAME OVER!'
         elModal.classList.remove("d-none")
         elOverlay.classList.remove("d-none")
-
     }
 
     else if (elAnswerText.innerHTML === "") {
@@ -293,6 +292,9 @@ elDataList.addEventListener("click", evt => {
         elConfetti.style.display = 'block'
         initConfetti()
         render()
+        elApplause.play()
+        elModalTitle.textContent = 'CONGRATULATIONS! YOU WIN!!'
+        elModal.classList.remove("d-none")
     }
 
 })
