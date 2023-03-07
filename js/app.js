@@ -32,58 +32,6 @@ const elApplause = document.querySelector(".applause")
 let evt = new Event('click')
 
 
-// setTimeout(() => {
-//     elTesting.dispatchEvent(evt)
-// },200)
-
-// window.addEventListener("click", (evt) => {
-//     evt.preventDefault()
-//     const randomingMusic = Math.floor(Math.random() * musics.length)
-//     const randomed = musics[randomingMusic]
-//     musics.forEach(item => {
-//         elAudio.src = randomed
-//         elAudio.play()
-//     })
-// })
-
-
-
-// const randomArray = new Uint32Array(1);
-// window.crypto.getRandomValues(randomArray);
-
-// const message = 'he';
-// const encoder = new TextEncoder();
-// const data = encoder.encode(message);
-// window.crypto.subtle.digest('SHA-256', data)
-
-
-//   function generateRandomString(length) {
-//     const randomArray = new Uint8Array(length);
-//     window.crypto.getRandomValues(randomArray);
-//     const base64String = btoa(String.fromCharCode(...randomArray));
-//     const finalR = base64String.replaceAll("/", "m")
-//     return finalR.slice(0, length);
-//   }
-
-
-//   console.log(generateRandomString(24));
-
-//   const options = {
-//     method: "GET",
-//     responseType: "arraybuffer",
-//     url: '../deo.mp4'
-//   }
-
-
-// async function replaceUrl() {
-//     const res = await axios.request(options)
-//     const data = new Blob([res.data])
-//     const urll = URL.createObjectURL(data)
-//     elVideo.src = urll
-//     console.log(urll)
-// }
-
-// replaceUrl()
 
 
 function useState(defaultValue) {
@@ -113,6 +61,15 @@ function RandomBySelectValue(param) {
 }
 
 
+// Random music 
+const randomMusics = () => {
+    const randomingMusic = Math.floor(Math.random() * musics.length)
+    const randomed = musics[randomingMusic]
+    musics.forEach(item => {
+        elAudio.src = randomed
+        elAudio.play()
+    })
+}
 
 
 // Random answers
@@ -217,18 +174,17 @@ function counterSelectValue() {
     }
 }
 
+window.addEventListener("DOMContentLoaded", () => {
+    randomMusics()
+})
 
-// Startpafe digi form
+
+// Homepage form
 elForm.addEventListener("submit", evt => {
     evt.preventDefault();
     elCar.classList.add("carDrive")
     setTimeout(() => {
-        const randomingMusic = Math.floor(Math.random() * musics.length)
-            const randomed = musics[randomingMusic]
-            musics.forEach(item => {
-                elAudio.src = randomed
-                elAudio.play()
-            })
+        randomMusics()
         elStartPage.classList.add("d-none");
         elSelectsBox.classList.toggle("d-none");
         elPlayStatusBox.classList.toggle("pt-4")
@@ -254,7 +210,7 @@ function generateNextStep(findedData, sings) {
     randd();
 }
 
-// event delegation
+// Event delegation
 elDataList.addEventListener("click", evt => {
     evt.preventDefault();
     const state = selectedSings()
@@ -281,8 +237,8 @@ elDataList.addEventListener("click", evt => {
     }
 
     else if (targeted !== elAnswerText.innerHTML) {
-        wrongAnswer +=1 
-        elWrongScore.innerHTML  = wrongAnswer;
+        wrongAnswer += 1
+        elWrongScore.innerHTML = wrongAnswer;
     }
 
     if (wrongAnswer == 5) {
@@ -448,5 +404,43 @@ window.addEventListener('click', function () {
     initConfetti();
 });
 
+
+
+// const randomArray = new Uint32Array(1);
+// window.crypto.getRandomValues(randomArray);
+
+// const message = 'he';
+// const encoder = new TextEncoder();
+// const data = encoder.encode(message);
+// window.crypto.subtle.digest('SHA-256', data)
+
+
+//   function generateRandomString(length) {
+//     const randomArray = new Uint8Array(length);
+//     window.crypto.getRandomValues(randomArray);
+//     const base64String = btoa(String.fromCharCode(...randomArray));
+//     const finalR = base64String.replaceAll("/", "m")
+//     return finalR.slice(0, length);
+//   }
+
+
+//   console.log(generateRandomString(24));
+
+//   const options = {
+//     method: "GET",
+//     responseType: "arraybuffer",
+//     url: '../deo.mp4'
+//   }
+
+
+// async function replaceUrl() {
+//     const res = await axios.request(options)
+//     const data = new Blob([res.data])
+//     const urll = URL.createObjectURL(data)
+//     elVideo.src = urll
+//     console.log(urll)
+// }
+
+// replaceUrl()
 
 

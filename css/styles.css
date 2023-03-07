@@ -1,6 +1,10 @@
 
 body{
     overflow-x: hidden;
+    background-image: url("../images/road-big.jpg");
+    background-repeat: no-repeat;
+    background-size: cover
+    
 }
 
 
@@ -249,4 +253,3 @@ body{
     z-index: 2; 
     cursor: pointer; 
   }
-
