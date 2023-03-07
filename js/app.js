@@ -213,6 +213,7 @@ function generateNextStep(findedData, sings) {
 // Event delegation
 elDataList.addEventListener("click", evt => {
     evt.preventDefault();
+    elDataList.classList.remove("shake")
     const state = selectedSings()
     let targeted = evt.target.dataset.name;
     if (targeted === elAnswerText.innerHTML) {
@@ -237,6 +238,7 @@ elDataList.addEventListener("click", evt => {
     }
 
     else if (targeted !== elAnswerText.innerHTML) {
+        elDataList.classList.add("shake")
         wrongAnswer += 1
         elWrongScore.innerHTML = wrongAnswer;
     }
