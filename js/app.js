@@ -223,6 +223,7 @@ elForm.addEventListener("submit", evt => {
     evt.preventDefault();
     elCar.classList.add("carDrive")
     setTimeout(() => {
+        elAudio.play()
         elStartPage.classList.add("d-none");
         elSelectsBox.classList.toggle("d-none");
         elPlayStatusBox.classList.toggle("pt-4")
