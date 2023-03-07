@@ -194,13 +194,13 @@ body{
 }
 
 .scoreUp {
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     z-index: 200;
     font-size: 35px;
     font-weight: 500;
-    color: gold;
+    color: rgb(98, 0, 255);
     text-shadow: 1px 2px 2px #e5ff00;
     opacity: 0;
 }
@@ -213,12 +213,17 @@ body{
 @keyframes Up {
 
     0% {
-        transform: translateY(9rem);
+        transform: translateY(14rem);
         opacity: 0;
     }
 
     25% {
-        transform: translateY(6rem);
+        transform: translateY(10rem);
+        opacity: 1;
+    }
+
+    50% {
+        transform: translateY(5rem);
         opacity: 1;
     }
 

@@ -234,7 +234,6 @@ elDataList.addEventListener("click", evt => {
         } else if (elSelection.value === "ninethy") {
             generateNextStep(finded, ninethySings)
         }
-
     }
 
     else if (targeted !== elAnswerText.innerHTML) {
