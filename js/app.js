@@ -213,9 +213,13 @@ function generateNextStep(findedData, sings) {
 // Event delegation
 elDataList.addEventListener("click", evt => {
     evt.preventDefault();
-    elDataList.classList.remove("shake")
     const state = selectedSings()
     let targeted = evt.target.dataset.name;
+
+    setTimeout(() => {
+        elDataList.classList.remove("shake")
+    }, 1700);
+
     if (targeted === elAnswerText.innerHTML) {
         let finded = state.findIndex(item => item.name === targeted);
         score += 2
@@ -237,6 +241,7 @@ elDataList.addEventListener("click", evt => {
     }
 
     else if (targeted !== elAnswerText.innerHTML) {
+
         elDataList.classList.add("shake")
         wrongAnswer += 1
         elWrongScore.innerHTML = wrongAnswer;
